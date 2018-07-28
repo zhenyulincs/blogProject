@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body,html {
+    height: 100%;
+}
+#logo {
+    width: 112px;
+}
+
+.logo {
+    width: 112px;
+}
+
+#login-form {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#email,#password{
+    display: flex;
+}
+
+#email label {
+    width: 160px;
+    line-height: 38px;
+    margin-bottom: 0;
+}
+
+#password label {
+    margin-right: 10px;
+    line-height: 38px;
+    margin-bottom: 0;
+}
+
+.gettoother {
+    position: absolute;
+    top: 256.42px;
+    right: 0;
+    left: 0;
+    width: 700px;
+    margin: auto;
+    color: white;
+}
+
+.gettoother p {
+    font-size: 122px;
+    text-align: center;
+}
+
+.gettoother .row {
+    justify-content: center;
+}
+
+.gettoother .row button {
+    width: 300px;
+    height: 200px;
+    font-size: 50px;
+    margin-left: 60px;
+}
