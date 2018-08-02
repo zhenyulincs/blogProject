@@ -13,7 +13,7 @@ var apiKey = `https://api.airtable.com/v0/apph1eZbZp8qPEf7d/User?api_key=keyPBol
 
 function retrieve(apiKey, id, records) {
 
-    var test = new Array();
+    var test = [];
     var apiKeyWithId = apiKey.match(/(\S*)\?/)[1];
     var api_key = apiKey.match(/\?(\S*)/)[1];
     var apiKeyWithId = apiKeyWithId + "/" + id + "?" + api_key
@@ -26,9 +26,10 @@ function retrieve(apiKey, id, records) {
                         url: apiKey,
                         success: function (data) {
                             if (id) {
-                                $.each(data.records, function (index, val) {
-                                    test.push(val[id]['password']);
-                                })
+                                // $.each(data.records, function (index, val) {
+                                //     test.push(val[id]['password']);
+                                // })
+                                test.push("123")
                             } else {
                                 $.each(data.records, function (index, val) {
                                     test.push(val);
@@ -72,4 +73,4 @@ function retrieve(apiKey, id, records) {
 var test1 = retrieve(apiKey, `fields`);
 // test1=JSON.stringify(test1)
 // test1=test1.toString();  
-console.log(test1)
+console.log(test1.length)

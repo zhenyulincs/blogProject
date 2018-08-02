@@ -1,11 +1,22 @@
 var apiKey = `https://api.airtable.com/v0/apph1eZbZp8qPEf7d/User?api_key=keyPBolSyO66VnA75`;
-var item = [];
-$.ajax({
-    url:apiKey,
-    success:function(data) {
-        $.each(data.records,function(index,val) {
-            item.push(val.id)
-        })
-        console.log(item.toString());
+// var item = [];
+function test1() {
+    // var item = [];
+    $.ajax({
+        url:apiKey,
+        type:"GET",
+        success:function (data) {
+            return callback(data);
+        }
+    });
+    function callback(data) {
+        return data
     }
-})
+    
+    
+}
+// test1();
+console.log(test1());
+// console.log(item.length);
+// console.log(item instanceof Array);
+
