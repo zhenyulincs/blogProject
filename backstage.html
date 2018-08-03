@@ -9,9 +9,14 @@
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
-    <script src="js/main.js"></script>
-    <title>Document</title>
-</head>
+    <!-- Include external CSS. -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.css">
+ 
+    <!-- Include Editor style. -->
+    <link href="css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/froala_style.min.css" rel="stylesheet" type="text/css" />
+  </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">
@@ -22,13 +27,15 @@
         </button>
       
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
+          <ul class="navbar-nav">
             <li class="nav-item active">
               <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item dropdown">
+            </ul>
+            <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown mr-auto">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <script>console.log(sessionStorage.getItem(`userInfo`))</script>
+                <script>$("#navbarDropdown").append(sessionStorage.getItem("userInfo"))</script>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="#">Action</a>
@@ -37,5 +44,23 @@
                 <a class="dropdown-item" href="#">Something else here</a>
               </div>
       </nav>
+      <div class="row">
+      <div class="list-group col-sm-2 ml-5 mt-3">
+        <a href="#" class="list-group-item list-group-item-action active ">Write</a>
+        <a href="#" class="list-group-item list-group-item-action ">Edit</a>
+        <a href="#" class="list-group-item list-group-item-action ">Delete</a>
+        <a href="#" class="list-group-item list-group-item-action ">Check</a>
+      </div>
+      <div class="ml-auto mr-auto col-sm-7 mt-3">
+    <textarea name="richtext" id="richtext" cols="30" rows="10"></textarea>
+    <script type="text/javascript" src="js/froala_editor.pkgd.min.js"></script>
+    <script> $(function() { $('textarea').froalaEditor({
+      imageUpload: false,
+      videoUpload: false,
+      fileUpload: false,
+      quickInsertButtons: ['table', 'ul', 'ol', 'hr']
+  }) });  </script>
+  </div>
+</div>
 </body>
 </html>
