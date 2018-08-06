@@ -21,7 +21,7 @@ body,html {
     height: 100%;
 }
 
-#email,#password{
+#email,#password,#username{
     display: flex;
 }
 
@@ -33,6 +33,12 @@ body,html {
 
 #password label {
     margin-right: 10px;
+    line-height: 38px;
+    margin-bottom: 0;
+}
+
+#username label {
+    margin-right: 15px;
     line-height: 38px;
     margin-bottom: 0;
 }

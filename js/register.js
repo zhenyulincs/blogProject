@@ -3,6 +3,7 @@ function upload() {
     $("span").click(function () {
         var email = $('#exampleInputEmail1').val();
         var password = $('#exampleInputPassword1').val();
+        var username = $('#exampleInputUsername1').val();
         $.getJSON(api, function (data) {
             var item = [];
             $.each(data.records, function (index, val) {
@@ -18,7 +19,7 @@ function upload() {
                 $("#message").css(`color`,`red`)
             } else {
                 if (item.indexOf(email) == -1) {
-                    ajaxForUpload(email, password);
+                    ajaxForUpload(email, password,username);
                 } else {
                     $("#message").empty();
                     $("#message").append(`user already exist`);
@@ -29,14 +30,15 @@ function upload() {
     })
 }
 
-function ajaxForUpload(email, password) {
+function ajaxForUpload(email, password,username) {
     $.ajax({
         url: api,
         type: "POST",
         data: {
             "fields": {
                 "email": email,
-                "password": password
+                "password": password,
+                "username": username
             }
         },
         error: function (jqXHR, textStatus, errorThrown) {
@@ -51,8 +53,8 @@ function ajaxForUpload(email, password) {
         },
         success: function (data) {
             if (data) {
-                $("#message").append(`submit success`)
-                $("#message").css(`color`,`green`)
+                sessionStorage.setItem('userInfo',`${email}`)
+                window.location.href="backstage.html"
             }
         }
     })

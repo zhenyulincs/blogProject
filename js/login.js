@@ -20,10 +20,8 @@ function check() {
                 if (airtable_email.indexOf(email) != -1) {
                     airtable_emailIndex = airtable_email.indexOf(email);
                     if (airtable_password[airtable_emailIndex] == password) {
-                        $(".message").empty();
-                        $(".message").append("Login success")
                         sessionStorage.setItem('userInfo',`${email}`)
-                        console.log(sessionStorage.getItem(`userInfo`))
+                        window.location.href='backstage.html'
     
                     } else {
                         $(".message").empty();
