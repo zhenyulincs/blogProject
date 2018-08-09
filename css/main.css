@@ -43,29 +43,10 @@ body,html {
     margin-bottom: 0;
 }
 
-.gettoother {
-    position: absolute;
-    top: 256.42px;
-    right: 0;
-    left: 0;
-    width: 700px;
-    margin: auto;
-    color: white;
+article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5%;
+    word-break: break-all;
 }
-
-.gettoother p {
-    font-size: 122px;
-    text-align: center;
-}
-
-.gettoother .row {
-    justify-content: center;
-}
-
-.gettoother .row button {
-    width: 300px;
-    height: 200px;
-    font-size: 50px;
-    margin-left: 60px;
-}
-
