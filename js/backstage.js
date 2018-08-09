@@ -63,6 +63,13 @@ function check() {
                         `</tr>`
                     )
                 }
+            })            
+            $("tbody").on("click", "tr", function () {
+                var id = $("input:hidden").val()
+                var userApiKeyWithId = userApiKey.match(/(\S*)\?/)[1] + "/" + currentUserId + "?" + userApiKey.match(/\?(\S*)/)[1]
+                $.get(userApiKeyWithId, function (data) {
+                    window.location.href = `http://` + host + `/blogProject?id=${id}&author=${data.fields.username}`
+                })
             })
         })
     })
