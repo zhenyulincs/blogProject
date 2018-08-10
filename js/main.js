@@ -19,8 +19,8 @@ if (page == '') {
 
 
 function article() {
-    var id = page.match(/(\S*)\&/)[1]
-    var author = page.match(/\&(\S*)/)[1]
+    var author = page.match(/(\S*)\&/)[1]
+    var id = page.match(/\&(\S*)/)[1]
     author = author.substring(7)
     var articleApiKeyWithId = articleApiKey.match(/(\S*)\?/)[1] + "/" + id + "?" + articleApiKey.match(/\?(\S*)/)[1]
     
