@@ -68,7 +68,7 @@ function check() {
                 var id = $("input:hidden").val()
                 var userApiKeyWithId = userApiKey.match(/(\S*)\?/)[1] + "/" + currentUserId + "?" + userApiKey.match(/\?(\S*)/)[1]
                 $.get(userApiKeyWithId, function (data) {
-                    window.location.href = `http://` + host + `/blogProject?id=${id}&author=${data.fields.username}`
+                    window.location.href = `https://` + host + `/blogProject?id=${id}&author=${data.fields.username}`
                 })
             })
         })
