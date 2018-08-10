@@ -4,9 +4,7 @@ var page = window.location.search
 var page = page.substring(4)
 if (page == '') {
     $(document).ready(function () {
-        index();
-        console.log(page);
-        
+        index();        
     })
 } else {
     $(document).ready(function () {
@@ -21,7 +19,16 @@ if (page == '') {
 function article() {
     var author = page.match(/(\S*)\&/)[1]
     var id = page.match(/\&(\S*)/)[1]
+<<<<<<< HEAD
+    id = id.substring(3)
+    author = author.substring(4)
+    console.log(author);
+    console.log(id);
+    
+    
+=======
     author = author.substring(7)
+>>>>>>> 4a37feb89bff27ff2439c931568bdc55c31b3a28
     var articleApiKeyWithId = articleApiKey.match(/(\S*)\?/)[1] + "/" + id + "?" + articleApiKey.match(/\?(\S*)/)[1]
     
     $.get(articleApiKeyWithId,function(data) {
@@ -66,7 +73,7 @@ function index() {
                 <div class="card-body">
                     <h5 class="card-title">${title}</h5>
                     <p class="card-text">Author: ${username}</p>
-                    <a href="?id=${id}&author=${username}" class="btn btn-primary">Go somewhere</a>
+                    <a href="?author=${username}&id=${id}" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
         </div>

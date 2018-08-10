@@ -51,7 +51,9 @@ function check() {
         })
         var currentUserId = allUserId[arrayIndex.indexOf(email)]
         var number = 0
+        var userApiKeyWithId = userApiKey.match(/(\S*)\?/)[1] + "/" + currentUserId + "?" + userApiKey.match(/\?(\S*)/)[1]
         $.get(articleApiKey, function (data) {
+            $.get
             $.each(data.records, function (index, val) {
                 if (currentUserId == val.fields.userid) {
                     number++
@@ -68,7 +70,11 @@ function check() {
                 var id = $("input:hidden").val()
                 var userApiKeyWithId = userApiKey.match(/(\S*)\?/)[1] + "/" + currentUserId + "?" + userApiKey.match(/\?(\S*)/)[1]
                 $.get(userApiKeyWithId, function (data) {
+<<<<<<< HEAD
+                    window.location.href = `https://` + host + `/blogProject?author=${data.fields.username}&id=${id}`
+=======
                     window.location.href = `https://` + host + `/blogProject?id=${id}&author=${data.fields.username}`
+>>>>>>> 4a37feb89bff27ff2439c931568bdc55c31b3a28
                 })
             })
         })
