@@ -53,7 +53,6 @@ function check() {
         var number = 0
         var userApiKeyWithId = userApiKey.match(/(\S*)\?/)[1] + "/" + currentUserId + "?" + userApiKey.match(/\?(\S*)/)[1]
         $.get(articleApiKey, function (data) {
-            $.get
             $.each(data.records, function (index, val) {
                 if (currentUserId == val.fields.userid) {
                     number++
