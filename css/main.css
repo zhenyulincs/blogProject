@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body,html {
+    height: 100%;
+}
+#logo {
+    width: 112px;
+}
+
+.logo {
+    width: 112px;
+}
+
+#login-form {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#email,#password,#username{
+    display: flex;
+}
+
+#email label {
+    width: 160px;
+    line-height: 38px;
+    margin-bottom: 0;
+}
+
+#password label {
+    margin-right: 10px;
+    line-height: 38px;
+    margin-bottom: 0;
+}
+
+#username label {
+    margin-right: 15px;
+    line-height: 38px;
+    margin-bottom: 0;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5%;
+    word-break: break-all;
+}
