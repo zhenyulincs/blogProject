@@ -42,6 +42,7 @@ else if (page == 'check') {
 $(document).ready(function() {
     $('#logout').click(function() {
         sessionStorage.removeItem("userInfo")
+        location.reload()
     })
 })
 
