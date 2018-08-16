@@ -4,7 +4,7 @@ var page = window.location.search
 var page = page.substring(4)
 if (page == '') {
     $(document).ready(function () {
-        index();        
+        index();
     })
 } else {
     $(document).ready(function () {
@@ -15,6 +15,19 @@ if (page == '') {
     })
 }
 
+if (sessionStorage.getItem("userInfo")) {
+    $("#user").html(`
+    <li class="nav-item dropdown mr-auto">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            <script>$("#navbarDropdown").append(sessionStorage.getItem("userInfo"))</script>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <button class='dropdown-item' id='logout'>Logout</button>
+          </div>
+        </li>
+    `)
+}
 
 function article() {
     var author = page.match(/(\S*)\&/)[1]
@@ -23,15 +36,15 @@ function article() {
     author = author.substring(4)
     console.log(author);
     console.log(id);
-    
-    
+
+
     var articleApiKeyWithId = articleApiKey.match(/(\S*)\?/)[1] + "/" + id + "?" + articleApiKey.match(/\?(\S*)/)[1]
-    
-    $.get(articleApiKeyWithId,function(data) {
-        showArticle(data.fields.title,data.fields.article,author)
+
+    $.get(articleApiKeyWithId, function (data) {
+        showArticle(data.fields.title, data.fields.article, author)
     })
-    
-    function showArticle(title,article,author) {
+
+    function showArticle(title, article, author) {
         $("article").html(`
         <h2 class='text-center'>${title}</h2>
         <p class='text-center'>Author: ${author}</p>
