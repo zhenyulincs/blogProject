@@ -50,3 +50,8 @@ article {
     margin-top: 5%;
     word-break: break-all;
 }
+
+article hr {
+    width: 100%;
+    border-top: 1px solid #1b1e21
+}
