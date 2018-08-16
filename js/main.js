@@ -15,7 +15,7 @@ if (page == '') {
     })
 }
 
-if (sessionStorage.getItem("userInfo")) {
+if (sessionStorage.getItem("userInfo")!= null) {
     $("#user").html(`
     <li class="nav-item dropdown mr-auto">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
