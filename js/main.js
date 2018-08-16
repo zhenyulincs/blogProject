@@ -33,8 +33,8 @@ function article() {
     
     function showArticle(title,article,author) {
         $("article").html(`
-        <h2>${title}</h2>
-        <p>Author: ${author}</p>
+        <h2 class='text-center'>${title}</h2>
+        <p class='text-center'>Author: ${author}</p>
         <p>${article}</p>
         `)
     }
