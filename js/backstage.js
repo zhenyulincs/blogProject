@@ -39,6 +39,12 @@ else if (page == 'check') {
     })
 }
 
+$(document).ready(function() {
+    $('#logout').click(function() {
+        sessionStorage.removeItem("userInfo")
+    })
+})
+
 function check() {
     var email = $("#navbarDropdown")[0].innerText;
     var email = email.substring(0, email.length - 1)
