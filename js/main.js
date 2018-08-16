@@ -14,20 +14,22 @@ if (page == '') {
         article()
     })
 }
+$(document).ready(function() {
+    if (sessionStorage.getItem("userInfo")!= null) {
+        $("#user").html(`
+        <li class="nav-item dropdown mr-auto">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                <script>$("#navbarDropdown").append(sessionStorage.getItem("userInfo"))</script>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <button class='dropdown-item' id='logout'>Logout</button>
+              </div>
+            </li>
+        `)
+    }
+})
 
-if (sessionStorage.getItem("userInfo")!= null) {
-    $("#user").html(`
-    <li class="nav-item dropdown mr-auto">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
-            <script>$("#navbarDropdown").append(sessionStorage.getItem("userInfo"))</script>
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <button class='dropdown-item' id='logout'>Logout</button>
-          </div>
-        </li>
-    `)
-}
 
 function article() {
     var author = page.match(/(\S*)\&/)[1]
