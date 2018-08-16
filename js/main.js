@@ -28,6 +28,10 @@ $(document).ready(function() {
             </li>
         `)
     }
+    $('#logout').click(function() {
+        sessionStorage.removeItem("userInfo")
+        location.reload()
+    })
 })
 
 
